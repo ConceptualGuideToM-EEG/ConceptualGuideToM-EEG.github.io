@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutor for readers and students</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <h1>Tutor for readers and students</h1>
+  <p id="status" class="sub">Loading…</p>
+  <noscript><p>Please enable JavaScript, or go back to the <a href="../">home page</a>.</p></noscript>
+  <p class="note">Answers are AI-generated and can contain errors; please check them against the book. See the <a href="../privacy.html">privacy notice</a>.</p>
+  <p><a href="../">Back to the home page</a></p>
+</main>
+<script src="../config.js"></script>
+<script>
+(function () {
+  var url = (window.CHATBOT_LINKS || {}).student || "";
+  var status = document.getElementById("status");
+  if (url.indexOf("https://") === 0) {
+    status.textContent = "Taking you to the tutor… If nothing happens, ";
+    var a = document.createElement("a");
+    a.href = url;
+    a.textContent = "open it here";
+    status.appendChild(a);
+    status.appendChild(document.createTextNode("."));
+    setTimeout(function () { location.replace(url); }, 800);
+  } else {
+    status.textContent = "The tutor is not available yet. Please check back soon.";
+  }
+})();
+</script>
+</body>
+</html>

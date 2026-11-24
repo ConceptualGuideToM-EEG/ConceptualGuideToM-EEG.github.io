@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tools for lecturers</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <h1>Tools for lecturers</h1>
+  <p id="status" class="sub">Loading…</p>
+  <noscript><p>Please enable JavaScript, or go back to the <a href="../">home page</a>.</p></noscript>
+  <p>You will be asked for the access code that comes with the lecturer material. The code is entered in the tool itself, not on this page.</p>
+  <p class="note">When you evaluate an answer, paste only the text of the answer: no names, student numbers or other identifying details. The proposed grade is a suggestion, and you decide the final grade. Answers are AI-generated and can contain errors. See the <a href="../privacy.html">privacy notice</a>.</p>
+  <p><a href="../">Back to the home page</a></p>
+</main>
+<script src="../config.js"></script>
+<script>
+(function () {
+  var url = (window.CHATBOT_LINKS || {}).lecturer || "";
+  var status = document.getElementById("status");
+  if (url.indexOf("https://") === 0) {
+    status.textContent = "Taking you to the lecturer tools… If nothing happens, ";
+    var a = document.createElement("a");
+    a.href = url;
+    a.textContent = "open them here";
+    status.appendChild(a);
+    status.appendChild(document.createTextNode("."));
+    setTimeout(function () { location.replace(url); }, 800);
+  } else {
+    status.textContent = "The lecturer tools are not available yet. Please check back soon.";
+  }
+})();
+</script>
+</body>
+</html>
