@@ -9,16 +9,18 @@ It only contains static pages. The chatbots themselves run elsewhere, so they ca
 |---|---|
 | `index.html` | Landing page with links to the two tools and the "good to know" notes |
 | `student/index.html` | Forwards to the student tutor (address set in `config.js`) |
-| `lecturer/index.html` | Forwards to the lecturer tools (address set in `config.js`) |
+| `lecturer/index.html` | Forwards to the exam tools for lecturers and practice (address set in `config.js`) |
 | `privacy.html` | Privacy notice (template: adjust to the final setup) |
 | `config.js` | The only file to edit when a chatbot moves |
 | `style.css` | Shared styling |
 
 Public addresses (never rename the organization or this repository once they are printed):
 
-- Home: `https://conceptualguidetom-eeg.github.io/`
+- Home (the only address to print in the book and in the lecturer material): `https://conceptualguidetom-eeg.github.io/`
 - Student tutor: `https://conceptualguidetom-eeg.github.io/student/`
-- Lecturer tools: `https://conceptualguidetom-eeg.github.io/lecturer/`
+- Exam tools for lecturers and practice: `https://conceptualguidetom-eeg.github.io/lecturer/`
+
+There is no access code: everyone chooses a role on the home page. Protection against overuse is on the server side of the chatbot (rate limits, daily caps and a spending ceiling), not on these pages.
 
 ## When the chatbot moves
 
@@ -33,7 +35,7 @@ The site updates within a minute or two.
 
 ## Rules for this repository
 
-- It is public. Never commit API keys, access codes, persona instructions, rubrics, or the book summaries/index used by the chatbot. Keep those on the server side of the chatbot.
+- It is public. Never commit API keys, other secrets, persona instructions, rubrics, or the book summaries/index used by the chatbot. Keep those on the server side of the chatbot.
 - Two-factor authentication on for every owner, and at least two owners in the organization.
 - Do not rename the organization or this repository after the address has been printed.
 
